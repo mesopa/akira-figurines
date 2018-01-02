@@ -1,1 +1,1 @@
-# akira-figurines
+# Akira Figurines Website Prototype
