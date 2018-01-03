@@ -1,0 +1,24 @@
+/*
+ * Project Styles
+ * Akira Figurines
+ */
+
+@import "functions";
+@import "variables";
+@import "mixins";
+
+body {
+  font-family: "Open Sans", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-weight: 300;
+}
+
+
+/*
+ * Footer Styles
+ */
+
+footer {
+  .copyright_info-wrap {
+    font-size: 0.875rem;
+  }
+}
