@@ -13,7 +13,7 @@
 
 $Shark: #1e1e20;
 $Cape-Cod: #374140;
-$Red-Ribbon: #e20d1b;
+$Red-Ribbon: #dc3522;
 $Pavlova: #d9cb9e;
 
 /*
@@ -21,9 +21,213 @@ $Pavlova: #d9cb9e;
  */
 
 body {
+  background-color: $Shark;
   font-family: "Open Sans", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   font-weight: 300;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.375rem;
+}
+
+.primary_colored {
+  color: $Red-Ribbon;
+}
+
+.btn_primary-colored {
+  @include button-variant($Red-Ribbon, $Red-Ribbon, darken($Red-Ribbon, 10%));
+}
+
+.btn_colored-sm {
+  font-weight: 700;
+
+@include button-size(0.25rem, 0.5rem, 0.875rem, 1.5, 0);
+}
+
+.frame_bordered {
+  border: 2px solid $Cape-Cod;
+}
+
+.form_control-custom {
+  background: none;
+  border-bottom: 2px solid $Pavlova;
+  border-left: none;
+  border-radius: 0;
+  border-right: none;
+  border-top: none;
+  color: #ffffff;
+  font-weight: 300;
+  padding-bottom: 10px;
+  padding-left: 0;
+
+  &:focus {
+    background: none;
+    border-bottom: 2px solid $Pavlova;
+    border-left: none;
+    border-radius: 0;
+    border-right: none;
+    border-top: none;
+    box-shadow: none;
+  }
+}
+
+.navbar-brand {
+  font-family: "Roboto", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 500;
+}
+
+/* Price Icon *******************/
+.price_placeholder {
+  position: absolute;
+
+  .price_wrap {
+    color: $Pavlova;
+    display: block;
+    font-family: "Roboto", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    position: relative;
+  }
+
+  .price_word {
+    font-size: 1.125rem;
+    font-weight: 500;
+    position: absolute;
+    right: 0;
+    top: -12px;
+  }
+
+  .price_price {
+    font-size: 2.25rem;
+    font-weight: 500;
+  }
+}
+
+/* Pill Icon ********************/
+.pill_icon-placeholder {
+  display: block;
+  height: 42px;
+  position: absolute;
+  width: 42px;
+}
+
+/* Pre-Order Sign ***************/
+.pre_order-sign-placeholder {
+  position: absolute;
+  right: auto;
+  left: 30px;
+  top: 0px;
+
+  @include media-breakpoint-up(sm) {
+    right: auto;
+    left: -74px;
+    top: -170px;
+  }
+
+  @include media-breakpoint-up(md) {
+    right: auto;
+    left: -74px;
+    top: -110px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    right: 25px;
+    left: auto;
+    top: -50px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    right: 15px;
+    top: -50px;
+  }
+
+  .pre_order-wrap {
+    color: $Pavlova;
+    font-family: "Roboto", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    height: 120px;
+    line-height: 1;
+    position: relative;
+    width: 120px;
+  }
+
+  .pre_order-wrap {
+    .pre_order-sign-hole {
+      background-color: $Cape-Cod;
+      border: 1px solid $Pavlova;
+      border-radius: 50%;
+      height: 10px;
+      position: absolute;
+      right: 45.88%;
+      top: -17px;
+      width: 10px;
+    }
+
+    .pre_order-sign-background {
+      background-color: #000000;
+      border: 6px solid #000000;
+      border-radius: 10px;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    .pre_order-sign-layer {
+      border: 4px solid $Pavlova;
+      border-radius: 10px;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    p {
+      bottom: 0;
+      left: -15px;
+      padding-top: 20px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+/*
+ * Header XL Hero
+ */
+
+.hero_header-wrap {
+  background-image: url("../images/shotaro-kaneda/kaneda-header-xl-1920.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+
+  .hero_header-inner {
+    height: 500px;
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1;
+      margin-top: 1rem;
+
+      small {
+        font-weight: 300;
+      }
+    }
+  }
+}
+
 
 /*
  * Synopsis Styles
@@ -31,6 +235,77 @@ body {
 
 .section_synopsis-wrap {
   background-color: $Cape-Cod;
+}
+
+.figurine_wrap {
+  height: auto;
+
+  @include media-breakpoint-up(sm) {
+    height: 380px;
+  }
+
+  .figurine_inner-wrap {
+    position: relative;
+    right: 0;
+    left: 0;
+    top: 0;
+    padding-left: 30%;
+
+    @include media-breakpoint-up(sm) {
+      position: absolute;
+      padding-left: 0;
+      right: -25px;
+      left: auto;
+      top: -40px;
+    }
+
+    @include media-breakpoint-up(md) {
+      right: 0px;
+      top: -140px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      right: 100px;
+      top: -130px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      right: 100px;
+      top: -140px;
+    }
+  }
+}
+
+.section_synopsis-wrap {
+  .price_placeholder {
+    position: absolute;
+    right: auto;
+    left: 60px;
+    top: 150px;
+
+    @include media-breakpoint-up(sm) {
+      right: auto;
+      left: 25px;
+      top: -60px;
+    }
+
+    @include media-breakpoint-up(md) {
+      right: auto;
+      left: 5px;
+      top: 10px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      right: 55px;
+      left: auto;
+      top: 100px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      right: 45px;
+      top: 100px;
+    }
+  }
 }
 
 
@@ -43,13 +318,85 @@ body {
   background-repeat: repeat;
 }
 
+.section_gallery-wrap {
+  .gallery_item {
+    color: $Pavlova;
+    display: block;
+    position: relative;
+
+    img {
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &:focus, &:hover {
+      color: darken($Pavlova, 10%);
+
+      img {
+        opacity: 0.8;
+      }
+    }
+
+    i {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+  }
+}
+
 /*
  * Forms Styles
  */
-
 .section_forms {
   background-image: url("../images/common/background-dark-pattern.png");
   background-repeat: repeat;
+}
+
+.section_forms {
+  .price_placeholder {
+    bottom: -8px;
+    position: absolute;
+    right: 90px;
+
+    @include media-breakpoint-up(sm) {
+      right: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+      right: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      right: 40px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      right: 90px;
+    }
+  }
+}
+
+
+.pill_icon-placeholder {
+  bottom: 0;
+  right: 160px;
+
+  @include media-breakpoint-up(sm) {
+    right: 60px;
+  }
+
+  @include media-breakpoint-up(md) {
+    right: 55px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    right: 110px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    right: 160px;
+  }
 }
 
 /*
@@ -59,6 +406,7 @@ body {
 footer {
   background-color: $Shark;
   .copyright_info-wrap {
+    color: $Pavlova;
     font-size: 0.875rem;
   }
 }
