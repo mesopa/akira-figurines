@@ -92,7 +92,7 @@ gulp.task('fontawesome-sass', function(){
 // Copy scripts that doesn't need any compilation
 gulp.task('no-compile-scripts', function(){
   return gulp.src([
-    'node_modules/jquery/dist/jquery.min.js', //Only for local development
+    //'node_modules/jquery/dist/jquery.min.js', //Only for local development
     'node_modules/popper.js/dist/umd/popper.min.js',
     'node_modules/lightbox2/dist/js/lightbox.min.js',
     'node_modules/lazysizes/lazysizes.min.js'
