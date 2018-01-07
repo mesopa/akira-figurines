@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Akira Figurines</title>
-  <meta name="description" content="">
+  <meta name="description" content="The Akira figurines website prototype it's one of many experiences to try new UX/UI.">
   <meta name="keywords" content="akira, anime figurine, ux ui prototype, Pedro Serapio">
 
   <meta name="author" content="Pedro Serapio">
@@ -40,13 +40,9 @@
   <meta content="1200" property="og:image:width">
   <meta content="627" property="og:image:height">
 
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/css/lightbox.min.css">
-  <link rel="stylesheet" href="assets/css/fonts.min.css">
-  <link rel="stylesheet" href="assets/css/styles.min.css">
+  <link rel="stylesheet" href="assets/css/app.min.css">
 </head>
-<body>
+<body data-spy="scroll" data-target="#mainNavigation" data-offset="120">
   <header>
     <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
       <a class="navbar-brand" href="#">AKIRA | FIGURINES</a>
@@ -63,12 +59,12 @@
             <a class="nav-link" href="#details">DETAILS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#pre-order">PRE-ORDER</a>
+            <a class="nav-link" href="#preorder">PRE-ORDER</a>
           </li>
         </ul>
       </div>
     </nav>
-    <div class="text-white hero_header-wrap">
+    <div class="text-white hero_header-wrap" data-type="background" data-speed="2">
       <div class="container">
         <div class="row text-center align-items-center hero_header-inner">
           <div class="col">
@@ -84,9 +80,10 @@
     <section id="synopsis" class="text-white pt-5 pb-5 content_wrap section_synopsis-wrap">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-12 col-sm-6 order-2 order-sm-1">
+          <div class="col-12 col-sm-6 col-xl-5 offset-xl-1 order-2 order-sm-1">
             <h2 class=" text-uppercase"><span class="primary_colored">Akira</span> Synopsis</h2>
-            <p>Set in a dystopian, cyberpunk-themed 2019, Akira tells the story of Shōtarō Kaneda, a leader of a local biker gang whose childhood friend, Tetsuo Shima, acquires incredible powers after a motorcycle accident, eventually threatening the entire military complex amidst chaos and rebellion in the sprawling futuristic metropolis of neo-Tokyo. While most of the character designs and settings were adapted from the manga, the plot differs considerably and prunes much of the last half of Akira.</p>
+            <p>Set in a dystopian, cyberpunk-themed 2019, Akira tells the story of Shōtarō Kaneda(金田 正太郎), a leader of a local biker gang whose childhood friend, Tetsuo Shima, acquires incredible powers after a motorcycle accident, eventually threatening the entire military complex amidst chaos and rebellion in the sprawling futuristic metropolis of neo-Tokyo. While most of the character designs and settings were adapted from the manga, the plot differs considerably and prunes much of the last half of Akira.</p>
+            <p class="text-secondary short_line-height"><small>This is only a prototype website, all photos were taken by me, there isn't any commercial propose and none of the forms present on this website are functioning.</small></p>
             <button type="button" class="text-uppercase btn btn-sm btn_primary-colored btn_colored-sm">Pre-Order</button>
           </div>
           <div class="col-12 col-sm-6 order-1 order-sm-2">
@@ -177,7 +174,7 @@
         </div>
       </div>
     </section>
-    <section id="pre-order" class="text-white pt-5 pb-5 content_wrap section_forms">
+    <section id="preorder" class="text-white pt-5 pb-5 content_wrap section_forms">
       <div class="container">
         <div class="row">
           <div class="col-12 col-sm-6 col-md-4">
@@ -259,11 +256,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/popper.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
-  <script src="assets/js/lazysizes.min.js"></script>
-  <script src="assets/js/lightbox.min.js"></script>
-  <script src="assets/js/scripts.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+  <script src="assets/js/scripts.min.js" defer></script>
 </body>
 </html>
