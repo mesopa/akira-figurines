@@ -3,13 +3,16 @@ var gulp           = require('gulp'),
     webpack        = require('webpack-stream'),
     googleWebFonts = require('gulp-google-webfonts'),
     sass           = require('gulp-sass'),
+    sassUnicode    = require('gulp-sass-unicode'),
     prefixer       = require('gulp-autoprefixer'),
     uglify         = require('gulp-uglify'),
     minifyCSS      = require('gulp-clean-css'),
     htmlmin        = require('gulp-htmlmin'),
+    uncss          = require('gulp-uncss'),
     connect        = require('gulp-connect'),
     concat         = require('gulp-concat'),
     replace        = require('gulp-replace'),
+    htmlreplace    = require('gulp-html-replace'),
     rename         = require('gulp-rename'),
     del            = require('del');
 
@@ -21,7 +24,7 @@ const base_path = './',
 gulp.task('connect', function(){
   connect.server({
     root: dist,
-    livereload: true
+    livereload: false
   });
 });
 
@@ -232,6 +235,48 @@ gulp.task('watch', function(){
   gulp.watch( src + '/stylesheet/*.scss', ['watch-concat-styles'] );
   gulp.watch( src + '/javascript/scripts.js', ['watch-concat-scripts'] );
 });
+
+//
+// AMP Section
+//
+
+gulp.task('amp-styles-sass', function(){
+  return gulp.src( src + '/amp/stylesheet/amp-styles.scss' )
+    .pipe(sass())
+    .pipe(sassUnicode())
+    .pipe(minifyCSS())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest( dist + '/assets/css/' ));
+});
+
+gulp.task('amp-inline-styles', ['amp-styles-sass'], function(){
+  return gulp.src( src + '/amp/index.amp.html' )
+    .pipe(htmlreplace({
+      'cssInline': {
+        'src': gulp.src( dist + '/assets/css/amp-styles.min.css' ),
+        'tpl': '<style amp-custom>%s</style>'
+      }
+    }))
+    .pipe(gulp.dest( dist + '/' ));
+});
+
+gulp.task('amp-watch', function(){
+  gulp.watch( src + '/amp/stylesheet/amp-styles.scss', ['amp-inline-styles'] );
+  gulp.watch( src + '/amp/index.amp.html', ['amp-inline-styles'] );
+});
+
+gulp.task('amp', function(){
+  gulp.start(
+    'amp-inline-styles',
+    'connect',
+    'amp-watch');
+});
+
+//
+// End of AMP Section
+//
 
 // Default task
 gulp.task('default', ['clean'], function(){
