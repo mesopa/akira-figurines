@@ -4,6 +4,7 @@
 ----------------------------------------------------------------
 0.0 Setup
 1.0 Typography
+2.0 Font Awesome Icons
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -17,3 +18,14 @@ $fonts-path: "../fonts";
 --------------------------------------------------------------*/
 
 @import "./styles-parts/_fonts";
+
+/*--------------------------------------------------------------
+2.0 Font Awesome Icons
+--------------------------------------------------------------*/
+
+// Variables
+// --------------------------
+$fa-font-path: "#{$fonts-path}/font-awesome";
+
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
