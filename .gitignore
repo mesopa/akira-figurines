@@ -1,2 +1,10 @@
-.gitignore
-node_modules
+# Ignore everything in the root except the "_dev", "docs" directory.
+/*
+!.gitignore
+!.csscomb.json
+!_dev/
+!docs/
+
+!gulpfile.js
+!package.json
+!README.md
