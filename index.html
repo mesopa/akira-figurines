@@ -35,8 +35,6 @@
     <meta name="twitter:description" content="The Akira figurines website prototype it's one of many experiences to try new UX/UI." />
     <meta name="twitter:title" content="Akira Figurines Prototype | MeSopa Minisite | Pedro Serapio" />
     <meta name="twitter:image" content="https://mesopa.github.io/akira-figurines//assets/images/common/akira-figurines-opengraph.jpg" />
-    <script type="module" crossorigin src="/assets/index-BPijtkNa.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BSjTAhiL.css">
   </head>
   <body>
     <header>
@@ -299,7 +297,62 @@
       </div>
     </footer>
 
+    <script type="module" src="/src/main.ts"></script>
 
+    <script type="module">
+      $(document).ready(function () {
+        $('a[href*=\\#]:not([href=\\#])').on('click', function () {
+          if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+              $('html,body').animate(
+                {
+                  scrollTop: target.offset().top - 120,
+                },
+                200,
+              );
+              return false;
+            }
+          }
+        });
+
+        function parallaxIt() {
+          // Create variables
+          var $fwindow = $(window);
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+          var $backgrounds = [];
+
+          // For each of background parallax element
+          $('[data-type="background"]').each(function () {
+            var $backgroundObj = $(this);
+
+            $backgroundObj.__speed = $backgroundObj.data('speed') || 1;
+            $backgroundObj.__fgOffset = $backgroundObj.offset().top;
+            $backgrounds.push($backgroundObj);
+          });
+
+          // Update positions
+          $fwindow.on('scroll resize', function () {
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            $backgrounds.forEach(function ($backgroundObj) {
+              var yPos = (scrollTop - $backgroundObj.__fgOffset) / $backgroundObj.__speed;
+
+              $backgroundObj.css({
+                backgroundPosition: 'center ' + yPos + 'px',
+              });
+            });
+          });
+
+          // Triggers window scroll for refresh
+          $fwindow.trigger('scroll');
+        }
+
+        parallaxIt();
+      });
+    </script>
   </body>
 </html>
 

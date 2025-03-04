@@ -1,10 +1,24 @@
-# Ignore everything in the root except the "_dev", "docs" directory.
-/*
-!.gitignore
-!.csscomb.json
-!_dev/
-!docs/
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-!gulpfile.js
-!package.json
-!README.md
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
