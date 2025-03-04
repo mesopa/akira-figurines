@@ -255,7 +255,7 @@ h3 {
  */
 
 .hero_header-wrap {
-  background-image: url('assets/images/shotaro-kaneda/kaneda-header-xl-1920.jpg');
+  background-image: url('/assets/images/shotaro-kaneda/kaneda-header-xl-1920.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -363,7 +363,7 @@ h3 {
  */
 
 .section_gallery-wrap {
-  background-image: url('assets/images/common/background-light-pattern.png');
+  background-image: url('/assets/images/common/background-light-pattern.png');
   background-repeat: repeat;
 }
 
@@ -399,7 +399,7 @@ h3 {
  * Forms Styles
  */
 .section_forms {
-  background-image: url('assets/images/common/background-dark-pattern.png');
+  background-image: url('/assets/images/common/background-dark-pattern.png');
   background-repeat: repeat;
 }
 
@@ -465,17 +465,17 @@ footer {
  */
 
 .lb-cancel {
-  background: url(assets/images/lightbox/loading.gif) no-repeat;
+  background: url(/assets/images/lightbox/loading.gif) no-repeat;
 }
 
 .lb-nav a.lb-prev {
-  background: url(assets/images/lightbox/prev.png) left 48% no-repeat;
+  background: url(/assets/images/lightbox/prev.png) left 48% no-repeat;
 }
 
 .lb-nav a.lb-next {
-  background: url(assets/images/lightbox/next.png) right 48% no-repeat;
+  background: url(/assets/images/lightbox/next.png) right 48% no-repeat;
 }
 
 .lb-data .lb-close {
-  background: url(assets/images/lightbox/close.png) top right no-repeat;
+  background: url(/assets/images/lightbox/close.png) top right no-repeat;
 }
