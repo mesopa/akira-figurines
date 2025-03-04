@@ -2,6 +2,7 @@
 
 .btn {
   -webkit-appearance: none;
+  appearance: none;
   background-color: transparent;
   border: var(--border-width) solid transparent;
   color: inherit;
@@ -299,7 +300,7 @@ p {
 }
 
 .hero_image-placeholder {
-  background-image: url('akira-figurines/assets/images/shotaro-kaneda/kaneda-header-xl-1920.jpg');
+  background-image: url('assets/images/shotaro-kaneda/kaneda-header-xl-1920.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -398,7 +399,7 @@ p {
  */
 
 .section_gallery-wrap {
-  background-image: url('akira-figurines/assets/images/common/background-light-pattern.png');
+  background-image: url('assets/images/common/background-light-pattern.png');
   background-repeat: repeat;
 }
 
@@ -411,7 +412,7 @@ p {
  */
 
 .section_forms {
-  background-image: url('akira-figurines/assets/images/common/background-dark-pattern.png');
+  background-image: url('assets/images/common/background-dark-pattern.png');
   background-repeat: repeat;
 }
 
