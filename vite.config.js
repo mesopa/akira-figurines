@@ -14,6 +14,7 @@ export default defineConfig({
       usePolling: true,
     },
   },
+  base: '/akira-figurines',
   build: {
     outDir: 'docs',
   },
